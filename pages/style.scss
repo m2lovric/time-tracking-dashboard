@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+$blue: hsl(246, 80%, 60%);
+$light-red: hsl(15, 100%, 70%); // (work)
+$soft-blue: hsl(195, 74%, 62%); //(play)
+$red: hsl(348, 100%, 68%); //(study)
+$lime-green: hsl(145, 58%, 55%); //(exercise)
+$violet: hsl(264, 64%, 52%); //(social)
+$soft-orange: hsl(43, 84%, 65%); //(self care)
+$blue-darker: hsl(226, 43%, 10%);
+$blue-dark: hsl(235, 46%, 20%);
+$blue-desaturated: hsl(235, 45%, 61%);
+$blue-pale: hsl(236, 100%, 87%);
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $blue-darker;
+}
+
+.app {
+  display: flex;
+  width: 1240px;
+  margin: 0 auto;
+  font-family: 'Rubik', sans-serif;
+
+  &--profile {
+    height: 500px;
+    width: 30%;
+  }
+
+  &--cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 70%;
+
+    .card {
+      width: 30%;
+      height: 240px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      &:hover {
+        .card--content {
+          background-color: $blue-desaturated;
+        }
+      }
+
+      &--top {
+        height: 70px;
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 20px;
+
+        img {
+          height: 80px;
+          width: auto;
+        }
+      }
+
+      &--content {
+        height: 190px;
+        margin-top: -30px;
+        background-color: $blue-dark;
+        border-radius: 10px;
+        color: white;
+        box-sizing: border-box;
+        padding: 0px 20px;
+
+        &--title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          h2 {
+            font-weight: 300;
+          }
+        }
+
+        .current {
+          font-weight: 300;
+          font-size: 3.75rem;
+          margin: 0;
+        }
+
+        .last {
+          font-weight: 300;
+          font-size: 0.9rem;
+          color: $blue-pale;
+        }
+      }
+    }
+  }
+}
