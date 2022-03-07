@@ -24,12 +24,12 @@ const IndexPage = () => {
 
       <main className='app'>
         <section className='app--profile'>
-          <article>
-            <img src='' alt='' />
+          <article className='app--profile--top'>
+            <img src='/images/image-jeremy.png' alt='profile picture' />
             <p>Report for</p>
             <h2>Jeremy Robson</h2>
           </article>
-          <article>
+          <article className='app--profile--bottom'>
             <Link href='/daily'>
               <a>Daily</a>
             </Link>
@@ -40,22 +40,18 @@ const IndexPage = () => {
               <a>Monthly</a>
             </Link>
           </article>
-
-          <div className='attribution'>
-            Challenge by{' '}
-            <a
-              href='https://www.frontendmentor.io?ref=challenge'
-              target='_blank'
-            >
-              Frontend Mentor
-            </a>
-            . Coded by <a href='#'>Matteo</a>.
-          </div>
         </section>
         <section className='app--cards'>
           <Cards />
         </section>
       </main>
+      <div className='attribution'>
+        Challenge by{' '}
+        <a href='https://www.frontendmentor.io?ref=challenge' target='_blank'>
+          Frontend Mentor
+        </a>
+        . Coded by <a href='#'>Matteo</a>.
+      </div>
     </>
   );
 };
