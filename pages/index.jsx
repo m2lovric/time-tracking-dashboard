@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import { Link, BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cards from '../components/Cards';
 
 const IndexPage = () => {
   return (
-    <>
+    <div>
       <Head>
         <link
           rel='icon'
@@ -23,27 +23,26 @@ const IndexPage = () => {
       </Head>
 
       <main className='app'>
-        <section className='app--profile'>
-          <article className='app--profile--top'>
-            <img src='/images/image-jeremy.png' alt='profile picture' />
-            <p>Report for</p>
-            <h2>Jeremy Robson</h2>
-          </article>
-          <article className='app--profile--bottom'>
-            <Link href='/daily'>
-              <a>Daily</a>
-            </Link>
-            <Link href='/weekly'>
-              <a>Weekly</a>
-            </Link>
-            <Link href='/monthly'>
-              <a>Monthly</a>
-            </Link>
-          </article>
-        </section>
-        <section className='app--cards'>
-          <Cards />
-        </section>
+        <BrowserRouter>
+          <section className='app--profile'>
+            <article className='app--profile--top'>
+              <img src='/images/image-jeremy.png' alt='profile picture' />
+              <p>Report for</p>
+              <h2>Jeremy Robson</h2>
+            </article>
+            <article className='app--profile--bottom'>
+              <Link to='/daily'>Daily</Link>
+              <Link to='/weekly'>Weekly</Link>
+              <Link to='/monthly'>Monthly</Link>
+            </article>
+          </section>
+          <section className='app--cards'>
+            <Routes>
+              <Route path='/' element={<Cards />} />
+              <Route path='/:id' element={<Cards />} />
+            </Routes>
+          </section>
+        </BrowserRouter>
       </main>
       <div className='attribution'>
         Challenge by{' '}
@@ -52,7 +51,7 @@ const IndexPage = () => {
         </a>
         . Coded by <a href='#'>Matteo</a>.
       </div>
-    </>
+    </div>
   );
 };
 
